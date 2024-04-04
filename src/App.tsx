@@ -8,7 +8,7 @@ function App() {
     return new Date().getFullYear();
   };
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="md">
       <Header />
       <main>
         <Outlet />

@@ -7,6 +7,7 @@ import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../configs/firebase";
 import { AuthContext } from "../../providers/auth";
+import Typography from '@mui/material/Typography';
 
 export const AddTodo = () => {
   const [title, setTitle] = useState<any>();
@@ -39,6 +40,9 @@ export const AddTodo = () => {
 
   return (
     <Card>
+     <Typography sx={{ fontSize: 14, mt: 3, ml: 2 }} color="text.secondary" gutterBottom>
+          After typing your task, press enter to add it to the list.
+        </Typography>
       <CardContent>
         <Box sx={{ display: "flex", alignItems: "flex-end" }}>
           <RadioButtonUncheckedIcon

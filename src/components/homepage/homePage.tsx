@@ -107,6 +107,17 @@ export const HomePage = () => {
     completedTodos.forEach(deleteTodo);
   };
 
+  const formatTimestamp = (timestamp: any) => {
+    const date = timestamp.toDate();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    const formattedDate = `${month}/${day}/${year}`;
+
+    return formattedDate;
+  };
+
   const todoItems = filteredTodos?.map((todo: Todo) => (
     <ListItem
       sx={{ padding: 0, m: 0, borderBottom: "1px dashed gray" }}
@@ -145,6 +156,18 @@ export const HomePage = () => {
             {todo.description}
           </Grid>
         </ListItemText>
+        <ListItemText sx={{ textAlign: "left" }}>
+          <Grid
+            sx={{
+              textDecoration: todo.isCompleted ? "line-through" : "none",
+              textAlign: "left",
+              justifyContent: "space-between",
+            }}
+          >
+            {formatTimestamp(todo.created_at)}
+          </Grid>
+        </ListItemText>
+
         <Grid>
           <IconButton onClick={() => deleteTodo(todo)}>
             <DeleteForeverIcon />
@@ -167,7 +190,7 @@ export const HomePage = () => {
             alignItems={"center"}
             justifyContent={"space-between"}
           >
-            <Box component={"span"}>{totalActiveTasks?.length} tasks left</Box>
+            <Box component={"span"}>{totalActiveTasks?.length} pending tasks</Box>
             <Box sx={{ display: "flex" }}>
               <HomePageButton
                 isActive={activeFilter === FilterState.ALL}
