@@ -87,7 +87,7 @@ export const LoginPage = () => {
     <Card>
       <CardContent sx={{ "& .MuiTextField-root": { mb: 2 } }}>
         <TextField
-          id="filled-basic"
+          id="filled-basic-email"
           label="Email"
           variant="filled"
           fullWidth
@@ -96,7 +96,7 @@ export const LoginPage = () => {
           onChange={setEmailValue}
         />
         <TextField
-          id="filled-basic"
+          id="filled-basic-password"
           label="Password"
           variant="filled"
           fullWidth

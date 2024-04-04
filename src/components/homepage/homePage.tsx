@@ -27,15 +27,15 @@ import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 type HomePageButtonProps = {
-  isActive?: boolean;
+  isactive?: 'true' | 'false';
   children: ReactNode;
   onClick?: () => void;
 };
 const HomePageButton: FC<HomePageButtonProps> = (props) => {
-  const { isActive = false } = props;
+  const { isactive = false } = props;
   return (
     <Button
-      sx={{ color: isActive ? "info.light" : "text.secondary" }}
+      sx={{ color: isactive ? "info.light" : "text.secondary" }}
       {...props}
     >
       {props.children}
@@ -90,8 +90,6 @@ export const HomePage = () => {
   };
   const totalActiveTasks = todos?.filter((todo) => !todo.isCompleted) ?? [];
   const completedTodos = todos?.filter((todo) => todo.isCompleted) ?? [];
-
-  console.log(completedTodos);
 
   const filteredTodos =
     activeFilter === FilterState.ALL
@@ -193,19 +191,19 @@ export const HomePage = () => {
             <Box component={"span"}>{totalActiveTasks?.length} pending tasks</Box>
             <Box sx={{ display: "flex" }}>
               <HomePageButton
-                isActive={activeFilter === FilterState.ALL}
+                isactive={activeFilter === FilterState.ALL ? 'true' : 'false'}
                 onClick={() => setActiveFilter(FilterState.ALL)}
               >
                 All
               </HomePageButton>
               <HomePageButton
-                isActive={activeFilter === FilterState.ACTIVE}
+                isactive={activeFilter === FilterState.ACTIVE ? 'true' : 'false'}
                 onClick={() => setActiveFilter(FilterState.ACTIVE)}
               >
                 Pending
               </HomePageButton>
               <HomePageButton
-                isActive={activeFilter === FilterState.COMPLETED}
+                isactive={activeFilter === FilterState.COMPLETED ? 'true' : 'false'}
                 onClick={() => setActiveFilter(FilterState.COMPLETED)}
               >
                 Completed{" "}
