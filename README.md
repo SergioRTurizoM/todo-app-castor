@@ -6,6 +6,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### Environment Variables
+
+ Add Firebase Credentials in file .env as mentioned in the following template:
+    
+    API_KEY =""
+    AUTH_DOMAIN= ""
+    PROJECT_ID= ""
+    STORAGE_BUCKET= ""
+    MESSAGING_SENDER_ID= ""
+    APP_ID= ""
+
 ### `npm start`
 
 Runs the app in the development mode.\

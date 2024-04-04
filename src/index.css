@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  background-image: url('./images/LightThemeDesktop.png');
+  background-size: cover;
+}
+
+.dark-theme #root {
+  background-image: url('./images/DarkThemeDesktop.png');
+  background-size: cover;
+}
