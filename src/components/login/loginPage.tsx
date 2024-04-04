@@ -14,6 +14,7 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import { useNavigate } from "react-router-dom";
+import GoogleIcon from '@mui/icons-material/Google';
 const provider = new GoogleAuthProvider();
 
 const auth = getAuth();
@@ -112,7 +113,9 @@ export const LoginPage = () => {
           Login
         </Button>
         <Button variant="text" onClick={loginInWithGoogle}>
-          Login with Google
+        <GoogleIcon sx={{mr: 1}}/>
+        <span>          Login with Google</span>
+
         </Button>
       </CardActions>
     </Card>

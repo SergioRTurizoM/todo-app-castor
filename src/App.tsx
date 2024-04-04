@@ -13,8 +13,8 @@ function App() {
       <main>
         <Outlet />
       </main>
-      <footer style={{ textAlign: "center", marginTop: 100 }}>
-        {currentYeae()}
+      <footer style={{ textAlign: "center", marginTop: 100,  }}>
+
       </footer>
     </Container>
   );
